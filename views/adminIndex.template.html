@@ -1,0 +1,89 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">菜单</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/admin/index">毕业选题管理系统</a>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li ng-class="{'active':chosenIdx==1}" ng-click="chosenIdx=1"><a href="javascript:void(0)">教师数据管理</a></li>
+                <li ng-class="{'active':chosenIdx==2}" ng-click="chosenIdx=2"><a href="javascript:void(0)">学生数据管理</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">管理员:{{userName}}</a>
+                </li>
+                <li><a href="javascript:void(0)" ng-click="logOut()"><i class="glyphicon glyphicon-log-out"></i>登出</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <!-- 添加教师数据 -->
+    <div class="row" ng-if="chosenIdx==1">
+        <div class="form-group col-xs-12 col-sm-8">
+            <div class="col-xs-4">教师编号:</div>
+            <div class="col-xs-8"><input type="text" class="form-control" placeholder="请输入教师编号" ng-model="teacher.userNo"></div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-8">
+            <div class="col-xs-4">教师姓名:</div>
+            <div class="col-xs-8"><input type="text" class="form-control" placeholder="请输入教师姓名" ng-model="teacher.userName"></div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-8">
+            <div class="col-xs-4">性别:</div>
+            <div class="col-xs-8"><input type="text" class="form-control" placeholder="请输入教师性别" ng-model="teacher.gender"></div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-8">
+            <div class="col-xs-4">教学方向:</div>
+            <div class="col-xs-8"><input type="text" class="form-control" placeholder="请输入教师教学方向" ng-model="teacher.major"></div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-8">
+            <div class="col-xs-4">入职时间:</div>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" placeholder="格式:年/月/日" ng-model="teacher.entitleTime">
+            </div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-8">
+            <div class="col-xs-offset-4 col-xs-2">
+                <button type="button" class="btn btn-success" ng-click="recordData(1)">录入</button>
+            </div>
+        </div>
+    </div>
+    <!-- 添加学生数据 -->
+    <div class="row" ng-if="chosenIdx==2">
+        <div class="form-group col-xs-12 col-sm-8">
+            <div class="col-xs-4">学号:</div>
+            <div class="col-xs-8"><input type="text" class="form-control" ng-model="student.userNo" placeholder="请输入学号"></div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-8">
+            <div class="col-xs-4">学生姓名:</div>
+            <div class="col-xs-8"><input type="text" class="form-control" ng-model="student.userName" placeholder="请输入学生姓名"></div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-8">
+            <div class="col-xs-4">性别:</div>
+            <div class="col-xs-8"><input type="text" class="form-control" ng-model="student.gender" placeholder="请输入学生性别"></div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-8">
+            <div class="col-xs-4">专业:</div>
+            <div class="col-xs-8"><input type="text" class="form-control" ng-model="student.major" placeholder="请输入学生专业"></div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-8">
+            <div class="col-xs-4">入学时间:</div>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" ng-model="student.entitleTime" placeholder="格式:年/月/日">
+            </div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-8">
+            <div class="col-xs-offset-4 col-xs-2">
+                <button type="button" class="btn btn-success" ng-click="recordData(2)">录入</button>
+            </div>
+        </div>
+    </div>
+</div>
+

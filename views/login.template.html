@@ -1,0 +1,62 @@
+<div class="container-fluid">
+    <div class="container">
+        <h2 class="text-center">本科生毕业选题系统</h2>
+        
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-sm-offset-8">
+                <div class="login">
+                    <ul class="list-inline text-right">
+                        <li ng-class="{true:'active',false:''}[chosenIdx==1]" ng-click="changeEntry(1)">学生入口</li>
+                        <li ng-class="{true:'active',false:''}[chosenIdx==2]" ng-click="changeEntry(2)">教师入口</li>
+                        <li ng-class="{true:'active',false:''}[chosenIdx==3]" ng-click="changeEntry(3)">管理员入口</li>
+                    </ul>
+                </div>
+                <!-- 学生入口 -->
+                <div class="form-horizontal" ng-if="chosenIdx==1" style="margin-top:10px;">
+                    <div class="form-group">
+                        <label for="userNo">学号:</label>
+                        <input class="form-control" type="text" ng-model="stu.No" id="userNo" placeholder="请输入用户编号">
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd">密码</label>
+                      <input class="form-control" type="password" ng-model="stu.pwd" id="pwd" placeholder="请输入密码">
+                    </div>
+            
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary btn-block" ng-click="submit(1)">登陆</button>
+                    </div>
+                </div>
+                <!-- 教师入口 -->
+                <div class="form-horizontal" ng-if="chosenIdx==2" style="margin-top:10px;">
+                    <div class="form-group">
+                        <label for="userNo">教师编号:</label>
+                        <input class="form-control" type="text" ng-model="teacher.No" id="userNo" placeholder="请输入教师编号">
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd">密码:</label>
+                      <input class="form-control" type="password" ng-model="teacher.pwd" id="pwd" placeholder="请输入密码">
+                    </div>
+            
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary btn-block" ng-click="submit(2)">登陆</button>
+                    </div>
+                </div>
+                <!-- 管理员入口 -->
+                <div class="form-horizontal" ng-if="chosenIdx==3" style="margin-top:10px;">
+                    <div class="form-group">
+                        <label for="userNo">管理员账号:</label>
+                        <input class="form-control" type="text" ng-model="teacher.No" id="userNo" placeholder="请输入管理员账号">
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd">密码:</label>
+                      <input class="form-control" type="password" ng-model="teacher.pwd" id="pwd" placeholder="请输入管理员密码">
+                    </div>
+                
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary btn-block" ng-click="submit(3)">登陆</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

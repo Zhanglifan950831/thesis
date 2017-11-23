@@ -1,0 +1,33 @@
+<div teacher-nav chosen='4'></div>
+<div class="container">
+    <ol class="breadcrumb">
+        <li>
+            <a href="#/teacher">首页</a>
+        </li>
+        <li class="active">密码修改</li>
+    </ol>
+    <div class="row space_10">
+        <div class="col-xs-4"><label for="pass">旧密码:</label></div>
+        <div class="col-xs-6"><input type="password" id="pass" ng-model="user.userPwd" class="form-control" ng-blur="valid()"></div>
+        <div class="col-xs-2"><i ng-if="isOk" class="glyphicon glyphicon-ok text-success"></i></div>
+        <div ng-if="isOk==false" class="col-xs-12"><span class="text-danger">{{msg}}</span></div>
+    </div>
+    <div class="row space_10">
+        <div class="col-xs-4"><label for="pass1">新密码:</label></div>
+        <div class="col-xs-6"><input type="password" id="pass1" ng-model="user.newUserPwd" class="form-control"></div>
+        <div class="col-xs-2"><i ng-if="isShow" class="glyphicon glyphicon-ok text-success"></i></div>
+        <div ng-if="!isShow" class="col-xs-12"><span class="text-danger">{{msg0}}</span></div>
+    </div>
+    <div class="row space_10">
+        <div class="col-xs-4"><label for="pass2">确认密码:</label></div>
+        <div class="col-xs-6"><input type="password" id="pass2" ng-model="user.newUserPwd1" class="form-control"></div>
+        <div class="col-xs-2"><i ng-if="isShow0" class="glyphicon glyphicon-ok text-success"></i></div>
+        <div ng-if="!isShow0" ng-show="isSame" class="col-xs-12"><span class="text-danger">{{msg1}}</span></div>
+    </div>
+    <div class="row space_10">
+        <div class="col-xs-6 col-xs-offset-2">
+            <button type="button" class="btn btn-success" ng-click="submit()">确认修改</button>
+            <button type="button" class="btn btn-danger" ng-click="reset()">重置</button>
+        </div>
+    </div>
+</div>

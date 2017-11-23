@@ -1,0 +1,37 @@
+<div stu-nav chosen="2"></div>
+<div class="container">
+    <ol class="breadcrumb">
+        <li>
+            <a href="#/student">首页</a>
+        </li>
+        <li class="active">选题结果</li>
+    </ol>
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered">
+            <tbody>
+                <tr>
+                    <td>选题:</td>
+                    <td>{{arcInfo.arcName}}</td>
+                </tr>
+                <tr>
+                    <td>指导教师:</td>
+                    <td>{{arcInfo.arcInstructor}}</td>
+                </tr>
+                <tr>
+                    <td>审核状态:</td>
+                    <td>
+                        <span class="text-danger" ng-if="arcInfo.arcState==1">待审核</span>
+                        <span class="text-success" ng-if="arcInfo.arcState==2"><i class="glyphicon glyphicon-ok-circle"></i>审核通过</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>成绩:</td>
+                    <td>
+                        <span class="text-danger" ng-if="arcInfo.arcScore==0">待判定</span>
+                        <span class="text-danger" ng-if="arcInfo.arcScore>0">{{arcInfo.arcScore}}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

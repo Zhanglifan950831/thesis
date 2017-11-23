@@ -1,0 +1,30 @@
+<div teacher-nav chosen="1"></div>
+<div class="container">
+    <ol class="breadcrumb">
+        <li>
+            <a href="#/teacher">首页</a>
+        </li>
+        <li class="active">选题发布</li>
+    </ol>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-3"><label for="arcName">题目</label></div>
+            <div class="col-xs-8"><input type="text" class="form-control" ng-model="arcName" id="arcName"></div>
+        </div>
+    </div>    
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-3">
+                <button type="submit" class="btn btn-success" ng-click="release()">发布</button>
+            </div>
+        </div>
+    </div>
+    
+    <ol class="breadcrumb">
+        <li class="active">已发布选题一览</li>
+    </ol>
+    
+    <div class="list-group">
+        <div class="list-group-item" ng-repeat="item in arcInfo">{{item.arcName}}</div>
+    </div>
+</div>

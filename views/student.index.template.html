@@ -1,0 +1,41 @@
+<div stu-nav></div>
+<div class="container">
+    <ol class="breadcrumb">
+        <li>
+            <a href="#/student">首页</a>
+        </li>
+        <li class="active">个人资料</li>
+    </ol>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-xs-4">学号:</div>
+                <div class="col-xs-8">{{stuInfo.userNo}}</div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-xs-4">姓名:</div>
+                <div class="col-xs-8">{{stuInfo.userName}}</div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-xs-4">性别:</div>
+                <div class="col-xs-8">{{stuInfo.gender}}</div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-xs-4">专业:</div>
+                <div class="col-xs-8">{{stuInfo.major}}</div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-xs-4">入学时间:</div>
+                <div class="col-xs-8">{{stuInfo.entitleTime|date:"yyyy-MM-dd"}}</div>
+            </div>
+        </li>
+    </ul>
+</div>
